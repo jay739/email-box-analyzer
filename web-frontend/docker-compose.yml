@@ -1,0 +1,104 @@
+version: '3.8'
+
+services:
+  # Frontend Development
+  frontend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+    depends_on:
+      - backend
+    networks:
+      - email-analyzer-network
+    profiles:
+      - dev
+
+  # Frontend Production
+  frontend-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+    depends_on:
+      - backend
+    networks:
+      - email-analyzer-network
+    profiles:
+      - prod
+
+  # Backend API (placeholder - should be defined in main docker-compose)
+  backend:
+    image: email-analyzer-backend:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/email_analyzer
+      - REDIS_URL=redis://redis:6379
+    networks:
+      - email-analyzer-network
+    profiles:
+      - dev
+      - prod
+
+  # Database (placeholder - should be defined in main docker-compose)
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=email_analyzer
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - email-analyzer-network
+    profiles:
+      - dev
+      - prod
+
+  # Redis (placeholder - should be defined in main docker-compose)
+  redis:
+    image: redis:7-alpine
+    networks:
+      - email-analyzer-network
+    profiles:
+      - dev
+      - prod
+
+  # Nginx Reverse Proxy (for production)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - frontend-prod
+      - backend
+    networks:
+      - email-analyzer-network
+    profiles:
+      - prod
+
+volumes:
+  postgres_data:
+
+networks:
+  email-analyzer-network:
+    driver: bridge 
