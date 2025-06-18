@@ -28,7 +28,7 @@ We welcome various types of contributions:
 
 1. **Fork the Repository**
    ```bash
-   git clone https://github.com/yourusername/email-box-analyzer.git
+   git clone https://github.com/jay739/email-box-analyzer.git
    cd email-box-analyzer
    ```
 

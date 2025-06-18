@@ -125,7 +125,7 @@ web-frontend/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/email-box-analyzer.git
+   git clone https://github.com/jay739/email-box-analyzer.git
    cd email-box-analyzer
    ```
 

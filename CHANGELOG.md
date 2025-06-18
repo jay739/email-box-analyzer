@@ -152,4 +152,4 @@ This is the first stable release of Email Box Analyzer, featuring a complete ema
 
 ---
 
-For detailed information about each release, please refer to the [GitHub releases page](https://github.com/yourusername/email-box-analyzer/releases). 
+For detailed information about each release, please refer to the [GitHub releases page](https://github.com/jay739/email-box-analyzer/releases). 
