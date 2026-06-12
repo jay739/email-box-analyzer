@@ -19,17 +19,19 @@ requirements_path = Path(__file__).parent / "requirements.txt"
 requirements = []
 if requirements_path.exists():
     with open(requirements_path, "r", encoding="utf-8") as f:
-        requirements = [line.strip() for line in f if line.strip() and not line.startswith("#")]
+        requirements = [
+            line.strip() for line in f if line.strip() and not line.startswith("#")
+        ]
 
 setup(
     name="email-box-analyzer",
     version="1.0.0",
-    author="Email Analyzer Team",
-    author_email="contact@emailanalyzer.com",
+    author="Jayakrishna Konda",
+    author_email="contact@jay739.dev",
     description="A comprehensive email analysis tool with visualizations",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/emailanalyzer/email-box-analyzer",
+    url="https://github.com/jay739/email-box-analyzer",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[
@@ -75,8 +77,8 @@ setup(
     },
     keywords="email analysis visualization imap smtp gmail outlook",
     project_urls={
-        "Bug Reports": "https://github.com/emailanalyzer/email-box-analyzer/issues",
-        "Source": "https://github.com/emailanalyzer/email-box-analyzer",
-        "Documentation": "https://emailanalyzer.readthedocs.io/",
+        "Bug Reports": "https://github.com/jay739/email-box-analyzer/issues",
+        "Source": "https://github.com/jay739/email-box-analyzer",
+        "Documentation": "https://github.com/jay739/email-box-analyzer#readme",
     },
-) 
+)

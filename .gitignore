@@ -287,6 +287,12 @@ jenkins_home/
 # CI/CD
 .ci/
 .circleci/
-.github/
 .gitlab-ci.yml
-.travis.yml 
+.travis.yml
+
+# Local AI-assistant scaffolding (not for the repo)
+CLAUDE.md
+.claude/
+
+# Generated dependency catalog (via /packages skill); kept local, not pushed
+docs/PACKAGES.md
