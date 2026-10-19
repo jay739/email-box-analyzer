@@ -236,7 +236,7 @@ class ConfigManager:
     def validate_email_address(self, email: str) -> bool:
         """Validate an email address format."""
         try:
-            validate_email(email)
+            validate_email(email, check_deliverability=False)
             return True
         except EmailNotValidError:
             return False
