@@ -1,5 +1,9 @@
 # Email Box Analyzer 📧📊
 
+<p align="center">
+  <img src="docs/logo.svg" alt="email-box-analyzer logo" width="128" />
+</p>
+
 A modern, intelligent email analysis platform that provides deep insights into your email patterns, communication habits, and inbox organization. Built with FastAPI backend and Next.js frontend, featuring seamless OAuth2 authentication and comprehensive email analytics.
 
 ## 🎯 Project Scope
