@@ -65,7 +65,7 @@ pytz==2023.3
 
 # Machine Learning (Optional)
 transformers==4.36.2
-torch==2.1.2
+torch==2.13.0
 tensorflow==2.15.0
 
 # Performance
