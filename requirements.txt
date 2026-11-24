@@ -28,7 +28,7 @@ spacy==3.7.2
 matplotlib==3.8.2
 seaborn==0.13.0
 plotly==5.17.0
-bokeh==3.3.2
+bokeh==3.8.2
 
 # Database (Optional - for production)
 sqlalchemy==2.0.23
