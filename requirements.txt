@@ -37,7 +37,7 @@ psycopg2-binary==2.9.9
 redis==5.0.1
 
 # Security
-cryptography==41.0.8
+cryptography==50.0.0
 bcrypt==4.1.2
 PyJWT==2.8.0
 
